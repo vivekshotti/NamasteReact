@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css"
 </head>
 <body>
     <div id="header">
@@ -47,38 +48,7 @@
     <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
 
-    <script>
-        const Heading = React.createElement("h1", {
-            id:"title",
-            className: "bold"
-        }, "Namaste Everyone");
-        // const element = createElement(type, props, ...children)
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(Heading);
-
-
-        // Creating a complex div structure like this:
-        // <div id ="html footer">
-        //     <h3>Footer1</h3>
-        //     <h3>Footer2</h3>
-        // </div> :
-        const foo1 = React.createElement('h3', {
-            id:'react=footer',
-            className:'bold',
-        }, 'React footer1')
-        const foo2 = React.createElement('h3', {
-            id:'react=footer',
-            className:'bold',
-        }, 'React footer2')
-
-        const container = React.createElement('div',{
-            id:'container'
-        },[foo1,foo2] );
-
-        // When we have to pass multiple children in a particular component / div, we pass an array in the form of [] square brackets.
-        root.render(container);
-
-    </script>
+    <script src="app.js"></script>
 </body>
 
 </html>
