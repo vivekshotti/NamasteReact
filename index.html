@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="header">
+        Header untouched : this is not react's root
+    </div>
+
+    <div id="root">
+        NOT RENDERED
+        <h1>Lavde lagyae</h1>
+        <h1>Lavde lagyae</h1>
+        <h1>Lavde lagyae</h1>
+        <h1>Lavde lagyae</h1>
+        <h1>Lavde lagyae</h1>
+
+        <!-- the above will not be rendered -->
+
+        <!-- - if react used in html, react will override whatever 
+            is exisiting in html part of the root section or the section specified as root. react will 
+            replace it with whatever you mention inside rneder. -->
+        
+
+        <!-- Hence a PRO TIP : developer always write "NOT RENDERED" inside the html root -->
+        <!-- This way anytime you see NOT RENDERED text message appearing on your app, you knwo there's a problem  -->
+        <!-- Problems like : some issue : or React is not there : or Root is not configured properly -->
+    </div>
+
+
+    <!-- <div id ="html footer">
+        <h3>Footer1</h3>
+        <h3>Footer2</h3>
+    </div> -->
+
+
+    <script>
+        const heading = document.createElement("h1");
+        heading.innerHTML = "namaste 2";
+        const rut = document.getElementById("root");
+        rut.appendChild(heading);
+    </script>
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        const Heading = React.createElement("h1", {
+            id:"title",
+            className: "bold"
+        }, "Namaste Everyone");
+        // const element = createElement(type, props, ...children)
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(Heading);
+
+
+        // Creating a complex div structure like this:
+        // <div id ="html footer">
+        //     <h3>Footer1</h3>
+        //     <h3>Footer2</h3>
+        // </div> :
+        const foo1 = React.createElement('h3', {
+            id:'react=footer',
+            className:'bold',
+        }, 'React footer1')
+        const foo2 = React.createElement('h3', {
+            id:'react=footer',
+            className:'bold',
+        }, 'React footer2')
+
+        const container = React.createElement('div',{
+            id:'container'
+        },[foo1,foo2] );
+
+        // When we have to pass multiple children in a particular component / div, we pass an array in the form of [] square brackets.
+        root.render(container);
+
+    </script>
+</body>
+
+</html>
