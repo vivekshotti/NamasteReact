@@ -1,0 +1,27 @@
+{
+  "name": "namastereact",
+  "version": "1.0.0",
+  "description": "Namaste React course",
+
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vivekshotti/NamasteReact.git"
+  },
+  "author": "Vivek Hotti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vivekshotti/NamasteReact/issues"
+  },
+  "homepage": "https://github.com/vivekshotti/NamasteReact#readme",
+  "devDependencies": {
+    "parcel": "^2.10.2",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

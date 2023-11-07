@@ -1,3 +1,5 @@
+Ep1 : INCEPTION
+
 - react is a library
 - library vs framework
 - read about emmets
@@ -39,3 +41,30 @@
     },[foo1,foo2] );
 
 - Diff b/w react-dev.js & react-prod.js in cdn links : react-prod.js contains minified & more optimised version of react-dev.js
+
+
+Ep2 : CHIT CHAT
+
+
+Ep3 : Igniting our app
+- To ignite our app, we need to use something called as **BUNDLERS** like **Webpack , Vite , Parcel**
+- Bundlers give us a lot of superpowers
+- we are creating our own version of create-react-app that helps us ignite a react app
+- in the original create-react-app, they've used webpack as a bundler
+- we will be using **Parcel**
+- Difference b/w webpack & parcel
+- why use npm ? because a react app uses multiple packages each with different set of services & those helper pckages can be installed & managed using npm
+- package.json vs package-lock.json : 
+    package-lock.json specifies the exact version of a package & all other dependent packages our project depends on
+- npx means execute using npm
+
+- Parcel does HMR (Hot Module Reloading). Every time you save your changes, it automatically reloads & changes. Parcel uses File Watcher Algorithm (which is written in C++) by keeping a track of all the file changes in realtime & reload on every save
+- While building a prod-build using parcel, we don't require :   // "main": "app.js", in package.json. It defines entry point for our app. Not needed in parcel, it gives error.
+
+- npx parcel index.html        : dev build
+- npx parcel build index.html  : prod build
+
+- Parcel Documentation : https://parceljs.org/docs/
+
+- Advantages of Parcel:
+![Alt text](images/image.png)

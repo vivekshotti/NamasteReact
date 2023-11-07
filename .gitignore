@@ -1,0 +1,50 @@
+# Compiled files
+*.class
+*.o
+*.pyc
+*.pyo
+*.dll
+*.exe
+
+# Temporary files
+*~
+*.swp
+*.swo
+*.swn
+*.bak
+*.log
+*.DS_Store
+
+# Dependency directories
+/node_modules/
+/bower_components/
+
+# Environment files
+.env
+
+# Build output
+/dist/
+/build/
+/out/
+.parcel-cache/
+
+# IDE files
+.idea/
+.vscode/
+
+# Package files
+*.tar
+*.gz
+*.zip
+
+# OS generated files
+Thumbs.db
+.DS_Store
+ehthumbs.db
+
+# User-specific files
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.user
+*.sln

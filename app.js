@@ -1,6 +1,11 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
 const Heading = React.createElement("h1", {
     id:"title",
-    className: "bold"
+    className: "bold",
+    // above attributes are called as props, you can pass anything or make your own attribute
+    //Eg:
+    helloji:'kaise ho'
 }, "Namaste Everyone");
 // const element = createElement(type, props, ...children)
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -12,7 +17,7 @@ root.render(Heading);
 //     <h3>Footer1</h3>
 //     <h3>Footer2</h3>
 // </div> :
-const foo1 = React.createElement('h3', {
+const foo1 = React.createElement('h2', {
     id:'react=footer',
     className:'bold',
 }, 'React footer1')
