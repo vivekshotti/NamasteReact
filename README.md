@@ -46,7 +46,7 @@ Ep1 : INCEPTION
 Ep2 : CHIT CHAT
 
 
-Ep3 : Igniting our app
+Ep3 : Igniting our app : Parcel ( Bundler )
 - To ignite our app, we need to use something called as **BUNDLERS** like **Webpack , Vite , Parcel**
 - Bundlers give us a lot of superpowers
 - we are creating our own version of create-react-app that helps us ignite a react app
@@ -68,3 +68,60 @@ Ep3 : Igniting our app
 
 - Advantages of Parcel:
 ![Alt text](images/image.png)
+
+Ep 4: Laying the Foundation : Babel
+- Babel coverts modern JS (E6) to older Javascript so that it can run on past/old versions of JS runtimes / web browsers
+
+- babel-plugin-transform-remove-console removes errors & console logs from console
+- Babel.rc is a babel config file
+
+
+    document.createElement    BROWSER API
+    | |
+    v
+    React.createElement     REACT API
+    | |
+    v
+    Direct Html tags        JSX
+
+- Initial philosphy while creating React : Update HTML using JS easily
+
+- JSX : JSX is HTML like syntax inside JS.
+- JSX uses React.createElement
+    So the flow is : JSX -> React.createElement -> Object -> HTML DOM
+
+- Babel reads your code line by line and then creates Abstract Syntax Tree, hence it converts jsx to normal html & js compatible with browser.
+
+- Difference b/w html & jsx, & different usage of jsx, syntax of jsx
+
+- Example of JSX being coverted to React API Code
+![Alt text](/images/babel1.png)
+
+- Babel comes along with parcel as a dependency
+
+- Everything is a componenet in React
+
+- REACT COMPONENTS
+    - Functional Based : New Way of writing code
+    - Class Based : Old Way of writing code
+
+- functional component : JS function that returns your JSX code / react element / component. Its a normal function.
+
+- In functional componenet name of the component should always start from the Capital Letter. Its a convention.
+
+    Eg: 
+
+    const FunctionalComponent = () => {
+        return (
+            <h1 id="humaraHeader">Yeh Humara Header hai</h1>
+        );
+    };
+
+    can also be written without using return & extra brackets:
+
+    const FunctionalComponent = () => (
+        <h1 id="humaraHeader">Yeh Humara Header hai</h1>
+    );
+
+- Jargon : Composing Componenets : 
+

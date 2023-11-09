@@ -32,3 +32,68 @@ const container = React.createElement('div',{
 
 // When we have to pass multiple React Elements in a particular component / div / React element, we pass an array in the form of [] square brackets.
 root.render(container);
+
+
+/**
+ * div clasd = header
+ *  <h1>Namaste React
+ *      <ul>
+ *          <li>YO
+ *          <li>YO
+ *          <li>YO
+ *          <li>YO
+ *      </ul>
+ * </div>
+ * 
+ * 
+ * 
+ */
+
+// Creating the above DOM Structure using ReactAPIs
+
+const newDiv = React.createElement(
+    'div',
+    {},
+    [
+        React.createElement('h1', {}, "Come on"),
+        React.createElement("ul", {},[
+            React.createElement("li",{}, "List item 1"),
+            React.createElement("li",{}, "List item 2"),
+        ])
+    ]
+);
+
+root.render(newDiv);
+
+
+// Writing JSX & rendering it
+
+
+const headingLadoo = (
+    <h1 id="ghanta" key="ghanta" className="">
+        Ghante ka React
+    </h1>
+);
+root.render(headingLadoo);
+
+// The above is a nomral variable /  React Element
+// The below is a Functional Component
+
+const FunctionalComponent = () => {
+    return (
+        <div>
+            {headingLadoo} 
+            {/* How variables are used inside another component */}
+            {/* {} Curly brackets can be used to write any JavaScript code */}
+            
+            {console.log("yolo")}
+
+            {/* <FunctionalComponent /> */}
+            {/* How functional components are imported */}
+
+            <h1 id="humaraHeader">Yeh Humara Header hai</h1>
+        </div>
+    )
+}
+
+root.render(<FunctionalComponent />)
