@@ -97,3 +97,169 @@ const FunctionalComponent = () => {
 }
 
 root.render(<FunctionalComponent />)
+
+
+
+
+
+const TitleFood = () => {
+    return(
+        <a href="/">
+            <img className="logo-img" src="https://yt3.ggpht.com/ytc/AKedOLSpK3T_2RxkMYb-pk9oENQB0NvYpeOdXRgQe8i5=s800-c-k-c0x00ffffff-no-rj" />
+        </a>
+    )
+
+}
+const HeaderComponent = () => {
+    return(
+        <div className="HeaderComponent">
+            <TitleFood />
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                </ul>
+                
+            </div>
+
+        </div>
+    )
+}
+
+
+const RestrauntList = [
+    {
+        key: 1,
+        name: "Burger King",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_208,h_208,c_fit/f10379c6bd1edbbb7ee38da07c78058f",
+        cusines: ["Burger", "American"],
+        rating: "4.2"
+    },
+    {
+        key: 2,
+        name: "KFC",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/56c9ab92bd79745fd152a30fa2525426",
+        cusines: ["Burger", "American"],
+        rating: "4.2"
+    },
+    {
+        key: 3,
+        name: "McDonalds",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/modyajdbiyacbqrh3pzn",
+        cusines: ["Burger", "American"],
+        rating: "4.2"
+    },
+    {
+        key: 4,
+        name: "Wendys",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/f1aa621021a2826088089b89842d4e7c",
+        cusines: ["Burger", "American"],
+        rating: "4.2"
+    },
+    {
+        key: 5,
+        name: "Starbucks",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/4df3497f1460dfd1ecd8125222f6d362",
+        cusines: ["Deserts", "Ice-Cream"],
+        rating: "4.2"
+    },
+    {
+        key: 6,
+        name: "Naturals",
+        image: "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/h59prft0iowju0cavifa",
+        cusines: ["Deserts", "Ice-Cream"],
+        rating: "4.2"
+    },
+];
+// Normal using props :
+// const RestrauntCard = (props) => {
+//     console.log(props)
+//     return(
+//         <div className="card">
+//             <img src={props.restraunt.image} />
+//             <h2>{props.restraunt.name}</h2>
+//             <h3>{props.restraunt.cusines.join(', ')}</h3>
+//             <h4>{props.restraunt.rating} stars</h4>
+//         </div>
+//     )
+// }
+
+// Destructuring of Props:
+const RestrauntCard = ({ restraunt }) => {
+    const { image, name, cusines, rating } = restraunt;
+    return(
+        <div className="card">
+            <img src={image} />
+            <h2>{name}</h2>
+            <h3>{cusines.join(', ')}</h3>
+            <h4>{rating} stars</h4>
+        </div>
+    )
+}
+
+const BodyComponenet = () => {
+    return(
+        <div className="BodyComponent">
+
+            {/* Rendering using map function without the use of forLoop : */}
+            {
+                RestrauntList.map((restraunt) => {
+                    return <RestrauntCard restraunt={restraunt} key={restraunt.key} />
+                })
+            }
+
+            {/* Rendering normally one by one */}
+            {/* <RestrauntCard restraunt={RestrauntList[0] key=0} />
+            <RestrauntCard restraunt={RestrauntList[1]} key=1 /> */}
+        </div>
+    )
+}
+
+const FooterComponenet = () => {
+    return(
+        <div>
+            Footer
+        </div>
+    )
+}
+
+
+const AppLayout = () => {
+    return (
+        <React.Fragment>
+            <HeaderComponent />
+            <BodyComponenet />
+            <FooterComponenet />
+        </React.Fragment>
+        
+        
+            /**
+             * Header
+             *
+             *      - Logo
+             *      - NavBar
+             *          - Home
+             *          - About 
+             *      - Cart
+             * Body
+             *      - Search Bar
+             *      - Restraunt List
+             *          - Restraunt Card
+             *              - Image
+             *              - Rating
+             *              - Tags (Cusines)
+             * 
+             *  
+             * Footer
+             *      - Ref Links
+             *      - Copyright
+             */
+
+            
+        
+    )
+}
+
+root.render(<AppLayout />)

@@ -110,18 +110,106 @@ Ep 4: Laying the Foundation : Babel
 - In functional componenet name of the component should always start from the Capital Letter. Its a convention.
 
     Eg: 
-
+    ```
     const FunctionalComponent = () => {
         return (
             <h1 id="humaraHeader">Yeh Humara Header hai</h1>
         );
     };
+    ```
 
     can also be written without using return & extra brackets:
-
+    ```
     const FunctionalComponent = () => (
         <h1 id="humaraHeader">Yeh Humara Header hai</h1>
     );
+    ```
 
-- Jargon : Composing Componenets : 
+- Jargon : Composing Componenets - components inside componenets.
 
+Ep5 : Talk is cheap, show me the code 
+Creating a food ordering app.
+
+- To select css properties inside of inside we use > .
+    Eg :  <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+
+    So to access <li> and give it CSS properties we will use :
+    ``` 
+        .nav-items > ul > li {
+
+        }
+    ```
+
+- Any piece of JSX Component, there can only be one parent.
+- Because we can only have one JSX, we have react Fragment.
+- React.Fragment is a component which is exported by React
+
+- Eg : 
+    This will work :
+    ```
+    return(
+        <React.Fragment>
+            <HeaderComponent />
+            <BodyComponenet />
+            <FooterComponenet />
+        </React.Fragment>
+    )
+    ```
+
+    ```
+    <!-- React.Fragment is too long to write, hence one can use empty tags also, it is one and the same thing -->
+    return(
+        <>
+            <HeaderComponent />
+            <BodyComponenet />
+            <FooterComponenet />
+        </> 
+    )
+    ```
+
+    This won't work:
+    ```
+    return(
+            <HeaderComponent />
+            <BodyComponenet />
+            <FooterComponenet />
+    )
+    ```
+
+    This is because normally return accepts just one div. In that
+    div you can further add further components / other divs. 
+    In the DOM, there is an additional DIV which is not necessary
+
+    ![Alt text](/images/ss1.png)
+
+    When we use React Fragement, we don't get an additional div.
+
+    ![Alt text](images/ss2.png)
+
+- <> </> is a shorthand for <React.Fragment> </React.Fragment>
+
+- Config Driven UI : We control our frontend user interface using a config , 
+for different use cases. Is a technique that allows you to 
+create user interfaces based on a configuration file, such as JSON, or a 
+TypeScript file that defines the layout and content of the UI components.
+
+- Optional Chaining JS
+
+- Whatever you pass in with a component as an attribute is known as a prop.
+    Helps in passing some data or some properties in our functional component
+    We pass in arguments & recieve parameters
+    Whenever you pass props inside functional component as arguments, you recieve it as a parameter wherever you call it.
+
+    [] Argument vs parameters, namasteJS
+    [] Map function, namasteJS
+
+- virtual DOM : representation of our actual DOM
+
+- reconciliation : algorithm that react uses to diff one tree from other (actual dom tree vs virtual dom tree), determines what needs to be changed in UI / updated in UI & just updates the small portion of the DOM instead of re-rendering the whole page/app.
+
+- Why we use key & how it helps during React reconciliation? if key is used, it exactly renders / adds / subracts the componenet instead of rendering all
+- NEVER use "index" that comes with "map" function as your key
+
+- React Fiber (new reconciliation engine responsible for diff)
